@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "keyword-density-checker"
+version = "1.0.0"
+description = "Keyword density checker for live pages and drafts (Markdown, HTML, text): most-used words and 2-3 word phrases, density, where they appear, and a two-page phrase comparison."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "CMO Owls", email = "hello@cmoowls.com" }]
+requires-python = ">=3.10"
+dependencies = ["cmoowls-seo-tools @ git+https://github.com/CMO-Owls/free-seo-tools.git#subdirectory=python"]
+keywords = ["keyword density", "seo", "content", "markdown", "copywriting", "n-grams"]
+classifiers = ["License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3", "Topic :: Internet :: WWW/HTTP :: Site Management"]
+
+[project.urls]
+Homepage = "https://www.cmoowls.com/tools/keyword-density-checker/"
+Source = "https://github.com/CMO-Owls/keyword-density-checker"
+Guide = "https://www.cmoowls.com/blog/seo-competitor-analysis/"
+
+[project.scripts]
+keyword-density-checker = "keyword_density_checker.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
